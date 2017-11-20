@@ -1,0 +1,25 @@
+<div class = "form-container well">
+  <table class="table">
+    <tr class="active">
+      <td>代辦事項</td>
+      <td><%= @list.title %></td>
+    </tr>
+    <br>
+
+      <tr>
+        <td>到期日</td>
+        <td><%= @list.date %></td>
+      </tr>
+      <br>
+
+      <tr class="success">
+        <td>備註</td>
+        <td><%= simple_format(@list.description) %></td>
+      </tr>
+  </table>
+
+  <div class = "button">
+    <%= link_to '回到首頁', lists_path, class: "btn btn-sm btn-default btn-success" %>
+  </div>
+
+</div>

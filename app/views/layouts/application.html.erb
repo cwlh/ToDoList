@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My To Do List</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+
+      .container{
+        width: 700px;
+        margin: 0px auto;
+        text-align: center;
+        background-color: #FFFFFF;
+      }
+
+      .form-container{
+        width: 700px;
+        margin: 0px auto;
+        text-align: left;
+        background-color: #FFFFFF;
+      }
+
+      .button{
+        text-align: right;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <p><%= flash[:notice] %></p>
+    <%= yield %>
+  </body>
+</html>
