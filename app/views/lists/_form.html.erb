@@ -1,27 +1,3 @@
-<div class="form-container well">
-<%= form_for @list do |f| %>
-
-  <div class="form-group">
-    <%= f.label :title, "標題" %>
-    <%= f.text_field :title, class: "form-control col-sm-4" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :date, "到期日" %>
-    <%= f.date_select :date, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :description, "備註" %>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class = "button">
-    <%= f.submit %>
-    <%= link_to '回到上一頁', :back, class: "btn btn-sm btn-default" %>
-  </div>
-<% end %>
-
 <% if @list.errors.present? %>
   <ul>
     <% @list.errors.each do |error, message| %>
@@ -29,3 +5,29 @@
     <% end %>
   </ul>
 <% end %>
+
+<div class="form-container text-left">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for @list do |f| %>
+      <div class="form-group">
+        <%= f.label :title, "標題" %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date, "到期日" %>
+        <%= f.date_select :date, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "備註" %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class = "button pull-right">
+        <%= f.submit %>
+        <%= link_to '回到上一頁', :back, class: "btn btn-sm btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>

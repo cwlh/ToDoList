@@ -1,32 +1,33 @@
-<div class="container well">
-  <h1>To Do List</h1>
+<div class="container text-center">
+  <div class="col-md-12">
+    <h1>To Do List</h1>
+    <p class = "button pull-right">
+      <button type="button" class="btn btn-default btn-sm">
+        <%= link_to "<span class='glyphicon glyphicon-plus'></span> 新增".html_safe, new_list_path %>
+      </button>
+    </p>
 
-  <p class = "button">
-    <button type="button" class="btn btn-default btn-sm">
-      <%= link_to "<span class='glyphicon glyphicon-plus'></span> 新增".html_safe, new_list_path %>
-    </button>
-  </p>
-
-  <table class="table table-striped table-condensed">
-    <tr>
-      <td> </td>
-      <td>代辦事項</td>
-      <td>到期日</td>
-      <td>檢視</td>
-      <td>編輯</td>
-      <td>刪除</td>
-    </tr>
-   <% @lists.each do |list| %>
-     <tr>
-       <td>
-         <%= check_box_tag :done, true, list.done, data: {url: done_list_path(list), method: :post, remote: true} %>
-       </td>
-       <td><%= list.title %></td>
-       <td><%= list.date %></td>
-       <td><%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, list_path(list) %></td>
-       <td><%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_list_path(list) %></td>
-       <td><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, list_path(list), method: :delete, data:{ confirm: "Are you sure?" } %></td>
-     </tr>
-   <% end %>
-  </table>
+    <table class="table table-striped table-condensed">
+      <tr>
+        <td> </td>
+        <td>代辦事項</td>
+        <td>到期日</td>
+        <td>檢視</td>
+        <td>編輯</td>
+        <td>刪除</td>
+      </tr>
+      <% @lists.each do |list| %>
+        <tr>
+          <td>
+            <%= check_box_tag :done, true, list.done, data: {url: done_list_path(list), method: :post, remote: true} %>
+          </td>
+          <td><%= list.title %></td>
+          <td><%= list.date %></td>
+          <td><%= link_to "<span class='glyphicon glyphicon-eye-open'></span>".html_safe, list_path(list) %></td>
+          <td><%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_list_path(list) %></td>
+          <td><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, list_path(list), method: :delete, data:{ confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

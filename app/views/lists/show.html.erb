@@ -1,25 +1,24 @@
-<div class = "form-container well">
-  <table class="table">
-    <tr class="active">
-      <td>代辦事項</td>
-      <td><%= @list.title %></td>
-    </tr>
-    <br>
+<div class = "form-container">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>To Do List</h2>
 
+    <table class="table table-bordered">
+      <tr>
+        <td>代辦事項</td>
+        <td><%= @list.title %></td>
+      </tr>
       <tr>
         <td>到期日</td>
         <td><%= @list.date %></td>
       </tr>
-      <br>
-
-      <tr class="success">
+      <tr>
         <td>備註</td>
         <td><%= simple_format(@list.description) %></td>
       </tr>
-  </table>
+    </table>
 
-  <div class = "button">
-    <%= link_to '回到首頁', lists_path, class: "btn btn-sm btn-default btn-success" %>
+    <div class = "button pull-right">
+      <%= link_to '回到首頁', lists_path, class: "btn btn-sm btn-default btn-success" %>
+    </div>
   </div>
-
 </div>
